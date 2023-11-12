@@ -9,6 +9,7 @@
 int _putchar(char c);
 size_t _strlen(const char *str);
 int print_string(const char *str);
+int put_null(const char *str);
 int _printf(const char *format, ...);
 
 #endif
