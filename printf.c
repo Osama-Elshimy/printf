@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i, chars_count = 0;
+	char *current_string;
 
 	if (format == NULL)
 		return (-1);
@@ -27,7 +28,8 @@ int _printf(const char *format, ...)
 					chars_count += _putchar(va_arg(args, int));
 					break;
 				case 's':
-					chars_count += print_string(va_arg(args, char *));
+					current_string = va_arg(args, char *);
+					chars_count += print_string(current_string);
 					break;
 				case '%':
 					chars_count += _putchar('%');
