@@ -8,13 +8,10 @@
 
 int print_string(const char *str)
 {
-	int i = 0;
+	int i, len = _strlen(str);
 
-	while (str[i])
-	{
+	for (i = 0; i < len; i++)
 		_putchar(str[i]);
-		i++;
-	}
 
-	return (i);
+	return (len);
 }
