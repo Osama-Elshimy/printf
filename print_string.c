@@ -9,13 +9,9 @@
 int print_string(const char *str)
 {
 	int i, len;
-	int result;
 
 	if (str == NULL)
-	{
-		result = put_null(str);
-		return (result);
-	}
+		return (put_null(str));
 
 	len = _strlen(str);
 	for (i = 0; i < len; i++)
