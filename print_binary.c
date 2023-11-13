@@ -2,28 +2,18 @@
 
 /**
  * print_binary - prints an unsigned integer in binary format
- * @n: unsigned integer to print in binary
+ * @num: unsigned integer to print in binary
  * Return: number of binary digits printed
  */
 
-int print_binary(unsigned int n)
+int print_binary(unsigned int num)
 {
-	int binary_len = 0;
+	char *str = convert_base(num, 2, false);
+	int binary_len = _strlen(str);
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
+	print_string(str);
 
-	if (n == 1)
-	{
-		_putchar('1');
-		return (1);
-	}
+	free(str);
 
-	binary_len += print_binary(n / 2);
-	_putchar((n % 2) + '0');
-
-	return (binary_len + 1);
+	return (binary_len);
 }

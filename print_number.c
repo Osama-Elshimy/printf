@@ -2,38 +2,25 @@
 
 /**
  * print_number - prints an integer.
- * @n: input integer.
+ * @num: input integer.
  * Return: length of digit.
  */
 
-int print_number(int n)
+int print_number(int num)
 {
-	int digit_len = 0, count;
-	int m = n > 0 ? n : -n;
+	unsigned int abs_num = num > 0 ? num : -num;
+	char *str = convert_base(abs_num, 10, false);
+	int len = 0;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
+	if (num == 0)
+		return (_putchar('0'));
 
-	if (n < 0)
-	{
-		_putchar('-');
-		digit_len++;
-	}
+	if (num < 0)
+		len += _putchar('-');
 
-	count = 1;
-	while (m / count > 9)
-		count *= 10;
+	len += print_string(str);
 
-	while (count > 0)
-	{
-		_putchar((m / count) + '0');
-		digit_len++;
-		m %= count;
-		count /= 10;
-	}
+	free(str);
 
-	return (digit_len);
+	return (len);
 }
