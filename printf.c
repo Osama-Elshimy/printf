@@ -36,6 +36,9 @@ int _printf(const char *format, ...)
 				case 'd':
 					chars_count += print_number(va_arg(args, int));
 					break;
+				case 'b':
+					chars_count += print_binary(va_arg(args, unsigned int));
+					break;
 				default:
 					chars_count += print_invalid(format[i]);
 			}

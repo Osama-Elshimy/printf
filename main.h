@@ -11,6 +11,8 @@ size_t _strlen(const char *str);
 int print_string(const char *str);
 int print_invalid(char c);
 int print_number(int n);
+int print_binary(unsigned int n);
+
 int _printf(const char *format, ...);
 
 #endif
