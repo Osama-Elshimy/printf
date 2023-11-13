@@ -10,8 +10,8 @@ int print_string(const char *str)
 {
 	int i, len;
 
-	if (str == NULL)
-		return (put_null(str));
+	if (!str)
+		str = "(null)";
 
 	len = _strlen(str);
 	for (i = 0; i < len; i++)
