@@ -8,7 +8,8 @@
 
 int print_number(int n)
 {
-	int digit_len = 0, m, count;
+	int digit_len = 0, count;
+	int m = n > 0 ? n : -n;
 
 	if (n == 0)
 	{
@@ -19,11 +20,8 @@ int print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		m = -n;
 		digit_len++;
 	}
-	else
-		m = n;
 
 	count = 1;
 	while (m / count > 9)

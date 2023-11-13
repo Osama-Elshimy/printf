@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i, chars_count = 0;
-	char *current_string;
 
 	if (format == NULL || (_strlen(format) == 1 && format[0] == '%'))
 		return (-1);
@@ -28,8 +27,7 @@ int _printf(const char *format, ...)
 					chars_count += _putchar(va_arg(args, int));
 					break;
 				case 's':
-					current_string = va_arg(args, char *);
-					chars_count += print_string(current_string);
+					chars_count += print_string(va_arg(args, char *));
 					break;
 				case '%':
 					chars_count += _putchar('%');
@@ -39,8 +37,7 @@ int _printf(const char *format, ...)
 					chars_count += print_number(va_arg(args, int));
 					break;
 				default:
-					chars_count += _putchar('%');
-					chars_count += _putchar(format[i]);
+					chars_count += print_invalid(format[i]);
 			}
 		}
 		else
