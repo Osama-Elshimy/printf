@@ -8,13 +8,13 @@
 
 int print_number(int n)
 {
-	int i, dcount = 0, m, d, count;
+	int digit_len = 0, m, d, count;
 
 	if (n < 0)
 	{
 		_putchar(45);
 		m = n * -1;
-		dcount++;
+		digit_len++;
 	}
 	else
 		m = n;
@@ -34,7 +34,7 @@ int print_number(int n)
 	while (m != 0)
 	{
 		m /= 10;
-		dcount++;
+		digit_len++;
 	}
-	return (dcount);
+	return (digit_len);
 }
