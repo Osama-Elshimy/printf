@@ -39,4 +39,3 @@ int print_number(int n)
 
 	return (digit_len);
 }
-
