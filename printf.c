@@ -28,13 +28,13 @@ void handle_format_specifier(char specifier, va_list args, int *chars_count)
 			chars_count += print_unsigned_int(va_arg(args, unsigned int));
 			break;
 		case 'o':
-			print_octal(va_arg(args, unsigned int));
+			chars_count += print_octal(va_arg(args, unsigned int));
 			break;
 		case 'x':
-			print_hex(va_arg(args, unsigned int), false);
+			chars_count += print_hex(va_arg(args, unsigned int), false);
 			break;
 		case 'X':
-			print_hex(va_arg(args, unsigned int), true);
+			chars_count += print_hex(va_arg(args, unsigned int), true);
 			break;
 		case 'b':
 			chars_count += print_binary(va_arg(args, unsigned int));
