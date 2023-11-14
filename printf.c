@@ -37,6 +37,8 @@ int handle_format_specifier(char specifier, va_list args)
 			return (print_non_printable(va_arg(args, char *)));
 		case 'r':
 			return (print_reverse(va_arg(args, char *)));
+		case 'R':
+			return (print_rot13(va_arg(args, char *)));
 		default:
 			return (print_invalid(specifier));
 	}

@@ -21,6 +21,8 @@ int write_to_buffer(char c);
 int print_non_printable(const char *str);
 int print_address(void *address);
 int print_reverse(const char *str);
+char *_strdup(const char *src);
+int print_rot13(const char *str);
 
 char *convert_base(unsigned long number, int base, bool upper);
 
