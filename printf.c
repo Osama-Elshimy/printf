@@ -4,6 +4,8 @@
  * handle_format_specifier - handles the format specifier
  * @specifier: format specifier
  * @args: arguments
+ *
+ * Return: number of characters printed
  */
 
 int handle_format_specifier(char specifier, va_list args)
