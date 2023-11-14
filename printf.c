@@ -35,6 +35,8 @@ int handle_format_specifier(char specifier, va_list args)
 			return (print_binary(va_arg(args, unsigned int)));
 		case 'S':
 			return (print_non_printable(va_arg(args, char *)));
+		case 'r':
+			return (print_reverse(va_arg(args, char *)));
 		default:
 			return (print_invalid(specifier));
 	}
