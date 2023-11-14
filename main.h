@@ -1,13 +1,13 @@
 #ifndef PRINTF_HEADER_H
 #define PRINTF_HEADER_H
 
+#include <ctype.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-int _putchar(char c);
 size_t _strlen(const char *str);
 int print_string(const char *str);
 int print_invalid(char c);
@@ -18,6 +18,7 @@ int print_octal(unsigned int num);
 int print_hex(unsigned int num, bool upper);
 void _flush_buffer(void);
 int write_to_buffer(char c);
+int print_non_printable(const char *str);
 
 char *convert_base(unsigned long number, int base, bool upper);
 

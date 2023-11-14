@@ -31,6 +31,8 @@ int handle_format_specifier(char specifier, va_list args)
 			return (print_hex(va_arg(args, unsigned int), true));
 		case 'b':
 			return (print_binary(va_arg(args, unsigned int)));
+		case 'S':
+			return (print_non_printable(va_arg(args, char *)));
 		default:
 			return (print_invalid(specifier));
 	}
