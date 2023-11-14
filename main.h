@@ -19,7 +19,7 @@ int print_hex(unsigned int num, bool upper);
 
 char *convert_base(unsigned long number, int base, bool upper);
 
-void handle_format_specifier(char specifier, va_list args, int *chars_count);
+int handle_format_specifier(char specifier, va_list args);
 int _printf(const char *format, ...);
 
 #endif

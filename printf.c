@@ -4,43 +4,33 @@
  * handle_format_specifier - handles the format specifier
  * @specifier: format specifier
  * @args: arguments
- * @chars_count: pointer to number of characters printed
  */
 
-void handle_format_specifier(char specifier, va_list args, int *chars_count)
+int handle_format_specifier(char specifier, va_list args)
 {
 	switch (specifier)
 	{
 		case 'c':
-			chars_count += _putchar(va_arg(args, int));
-			break;
+			return (_putchar(va_arg(args, int)));
 		case 's':
-			chars_count += print_string(va_arg(args, char *));
-			break;
+			return (print_string(va_arg(args, char *)));
 		case '%':
-			chars_count += _putchar('%');
-			break;
+			return (_putchar('%'));
 		case 'i':
 		case 'd':
-			chars_count += print_number(va_arg(args, int));
-			break;
+			return (print_number(va_arg(args, int)));
 		case 'u':
-			chars_count += print_unsigned_int(va_arg(args, unsigned int));
-			break;
+			return (print_unsigned_int(va_arg(args, unsigned int)));
 		case 'o':
-			chars_count += print_octal(va_arg(args, unsigned int));
-			break;
+			return (print_octal(va_arg(args, unsigned int)));
 		case 'x':
-			chars_count += print_hex(va_arg(args, unsigned int), false);
-			break;
+			return (print_hex(va_arg(args, unsigned int), false));
 		case 'X':
-			chars_count += print_hex(va_arg(args, unsigned int), true);
-			break;
+			return (print_hex(va_arg(args, unsigned int), true));
 		case 'b':
-			chars_count += print_binary(va_arg(args, unsigned int));
-			break;
+			return (print_binary(va_arg(args, unsigned int)));
 		default:
-			chars_count += print_invalid(specifier);
+			return (print_invalid(specifier));
 	}
 }
 
@@ -65,7 +55,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			handle_format_specifier(format[i], args, &chars_count);
+			chars_count += handle_format_specifier(format[i], args);
 		}
 		else
 			chars_count += _putchar(format[i]);
