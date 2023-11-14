@@ -29,6 +29,8 @@ int handle_format_specifier(char specifier, va_list args)
 			return (print_hex(va_arg(args, unsigned int), false));
 		case 'X':
 			return (print_hex(va_arg(args, unsigned int), true));
+		case 'p':
+			return (print_address(va_arg(args, void *)));
 		case 'b':
 			return (print_binary(va_arg(args, unsigned int)));
 		case 'S':

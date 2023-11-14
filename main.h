@@ -19,6 +19,7 @@ int print_hex(unsigned int num, bool upper);
 void _flush_buffer(void);
 int write_to_buffer(char c);
 int print_non_printable(const char *str);
+int print_address(void *address);
 
 char *convert_base(unsigned long number, int base, bool upper);
 
