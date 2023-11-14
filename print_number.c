@@ -13,10 +13,10 @@ int print_number(int num)
 	int len = 0;
 
 	if (num == 0)
-		return (_putchar('0'));
+		return (write_to_buffer('0'));
 
 	if (num < 0)
-		len += _putchar('-');
+		len += write_to_buffer('-');
 
 	len += print_string(str);
 

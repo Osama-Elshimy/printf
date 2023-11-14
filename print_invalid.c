@@ -10,8 +10,8 @@ int print_invalid(char c)
 {
 	int len = 0;
 
-	len += _putchar('%');
-	len += _putchar(c);
+	len += write_to_buffer('%');
+	len += write_to_buffer(c);
 
 	return (len);
 }

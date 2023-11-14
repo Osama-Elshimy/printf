@@ -13,11 +13,11 @@ int handle_format_specifier(char specifier, va_list args)
 	switch (specifier)
 	{
 		case 'c':
-			return (_putchar(va_arg(args, int)));
+			return (write_to_buffer(va_arg(args, int)));
 		case 's':
 			return (print_string(va_arg(args, char *)));
 		case '%':
-			return (_putchar('%'));
+			return (write_to_buffer('%'));
 		case 'i':
 		case 'd':
 			return (print_number(va_arg(args, int)));
@@ -60,7 +60,7 @@ int _printf(const char *format, ...)
 			chars_count += handle_format_specifier(format[i], args);
 		}
 		else
-			chars_count += _putchar(format[i]);
+			chars_count += write_to_buffer(format[i]);
 	}
 
 	va_end(args);

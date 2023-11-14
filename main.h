@@ -16,6 +16,8 @@ int print_binary(unsigned int n);
 int print_unsigned_int(unsigned int num);
 int print_octal(unsigned int num);
 int print_hex(unsigned int num, bool upper);
+void _flush_buffer(void);
+int write_to_buffer(char c);
 
 char *convert_base(unsigned long number, int base, bool upper);
 

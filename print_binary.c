@@ -12,7 +12,7 @@ int print_binary(unsigned int num)
 	int binary_len = _strlen(str);
 
 	if (binary_len == 0)
-		binary_len += _putchar('0');
+		binary_len += write_to_buffer('0');
 
 	print_string(str);
 
