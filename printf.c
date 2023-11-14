@@ -64,6 +64,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
+	_flush_buffer();
 
 	return (chars_count);
 }
